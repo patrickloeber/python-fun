@@ -3,6 +3,9 @@ import json
 import requests # to sent GET requests
 from bs4 import BeautifulSoup # to parse HTML
 
+# user can input a topic and a number
+# download first n images from google image search
+
 GOOGLE_IMAGE = \
     'https://www.google.com/search?site=&tbm=isch&source=hp&biw=1873&bih=990&'
 
@@ -38,8 +41,8 @@ def download_images():
     print(searchurl)
 
     # request url, without usr_agent the permission gets denied
-    r = requests.get(searchurl, headers=usr_agent)
-    html = r.text
+    response = requests.get(searchurl, headers=usr_agent)
+    html = response.text
 
     # find all divs where class='rg_meta'
     soup = BeautifulSoup(html, 'html.parser')
@@ -59,11 +62,11 @@ def download_images():
 
     for i, imagelink in enumerate(imagelinks):
         # open image link and save as file
-        r = requests.get(imagelink)
+        response = requests.get(imagelink)
         
         imagename = SAVE_FOLDER + '/' + data + str(i+1) + '.jpg'
         with open(imagename, 'wb') as file:
-            file.write(r.content)
+            file.write(response.content)
 
     print('Done')
 
