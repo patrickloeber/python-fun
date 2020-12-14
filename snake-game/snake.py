@@ -65,7 +65,7 @@ while key != ESC:
         score += 1
         food = ()
         while food == ():
-            food = (randint(1,width), randint(1,height))
+            food = (randint(1,height), randint(1,width))
             if food in snake:
                 food = ()
         win.addch(food[0], food[1], '#')
