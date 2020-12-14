@@ -3,12 +3,12 @@ from random import randint
 
 #constants
 
-width = 18
-height = 58 
+width = 58
+height = 18 
 
 # setup window
 curses.initscr()
-win = curses.newwin(width+2, height+2, 0, 0) # y,x
+win = curses.newwin(height+2, width+2, 0, 0) # y,x
 win.keypad(1)
 curses.noecho()
 curses.curs_set(0)
@@ -53,9 +53,9 @@ while key != ESC:
 
     # check if we hit the border
     if y == 0: break
-    if y == width+1: break
+    if y == height+1: break
     if x == 0: break
-    if x == height+1: break
+    if x == width+1: break
 
     # if snake runs over itself
     if snake[0] in snake[1:]: break
