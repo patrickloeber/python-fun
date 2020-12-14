@@ -16,8 +16,8 @@ win.border(0)
 win.nodelay(1) # -1
 
 # snake and food
-snake = [(4, 10), (4, 9), (4, 8)]
-food = (10, 15)
+snake = [(4, 4), (4, 3), (4, 2)]
+food = (6, 6)
 
 win.addch(food[0], food[1], '#')
 # game logic
