@@ -3,12 +3,18 @@ from random import randint
 
 #constants
 
-width = 58
-height = 18 
+WINDOW_WIDTH = 60  # number of columns of window box 
+WINDOW_HEIGHT = 20 # number of rows of window box 
+'''
+Number of blocks in window per line = WINDOW_WIDTH -2. 
+Block x index ranges from 1 to WINDOW_WIDTH -2.
+Number of blocks in window per column = WINDOW_HEIGHT -2. 
+Block y index ranges from 1 to WINDOW_HEIGHT -2.
+'''
 
 # setup window
 curses.initscr()
-win = curses.newwin(height+2, width+2, 0, 0) # y,x
+win = curses.newwin(WINDOW_HEIGHT, WINDOW_WIDTH, 0, 0) # rows, columns
 win.keypad(1)
 curses.noecho()
 curses.curs_set(0)
@@ -53,9 +59,9 @@ while key != ESC:
 
     # check if we hit the border
     if y == 0: break
-    if y == height+1: break
+    if y == WINDOW_HEIGHT-1: break
     if x == 0: break
-    if x == width+1: break
+    if x == WINDOW_WIDTH -1: break
 
     # if snake runs over itself
     if snake[0] in snake[1:]: break
@@ -65,7 +71,7 @@ while key != ESC:
         score += 1
         food = ()
         while food == ():
-            food = (randint(1,height), randint(1,width))
+            food = (randint(1,WINDOW_HEIGHT-2), randint(1,WINDOW_WIDTH -2))
             if food in snake:
                 food = ()
         win.addch(food[0], food[1], '#')
