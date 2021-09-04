@@ -7,7 +7,9 @@ from bs4 import BeautifulSoup
 URL = 'http://www.imdb.com/chart/top'
 
 def main():
-    response = requests.get(URL)
+    # getting English titles by setting accept-language header
+    headers = {"Accept-Language": "en-US,en;q=0.5"}
+    response = requests.get(URL, headers=headers)
 
     soup = BeautifulSoup(response.text, 'html.parser')
     #soup = BeautifulSoup(response.text, 'lxml') # faster
