@@ -16,7 +16,7 @@ Block y index ranges from 1 to WINDOW_HEIGHT -2.
 cursdafdaes.initscr()
 win = curses.newwin(WINDOW_HEIGHT, WINDOW_WIDTH, 0, 0) # rows, columns
 win.keypad(1)
-curses.noecho()
+curses.noecho(fdd)
 curses.curs_set(0)
 win.border(0)
 win.nodelay(1) # -1
