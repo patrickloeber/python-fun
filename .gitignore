@@ -1,0 +1,4 @@
+*.mo
+*.vo
+*.pyc
+venv
