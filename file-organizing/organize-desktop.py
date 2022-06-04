@@ -1,4 +1,6 @@
 # organize the desktop
+# moves images, videos, screenshots, and audio files
+# into corresponding folders
 import os
 import shutil
 
