@@ -15,3 +15,8 @@ Then start the app, upload a photo, and have fun!
 ```bash
 python main.py
 ```
+
+## Resources
+
+- Inspired by [restorephotos.io](https://www.restorephotos.io/)
+- [https://github.com/TencentARC/GFPGAN](https://github.com/TencentARC/GFPGAN)
