@@ -22,7 +22,7 @@ db.create_all()
 def home():
     # todo_list = Todo.query.all()
     todo_list = db.session.query(Todo).all()
-    return "Hello, World!"
+    # return "Hello, World!"  # this line is to put in comment to get the todo_list experience
     return render_template("base.html", todo_list=todo_list)
 
 
