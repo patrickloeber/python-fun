@@ -7,9 +7,11 @@ Simple Flask app to restore old photos with AI. It uses the [GFPGAN](https://rep
 pip install flask replicate python-dotenv
 ```
 
-You also need a [Replicate](https://replicate.com/) API Token. Put the token in the `.env` file.
+You need a [Replicate](https://replicate.com/) API Token (You can get started for free). Put the token in the `.env` file.
 
-Start the app, upload a photo, and have fun!
+Also, create a new folder named `static` in the root of the project and an inner folder `static/images/` first.
+
+Then start the app, upload a photo, and have fun!
 
 ```bash
 python main.py
