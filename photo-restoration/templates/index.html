@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Photo Restoration</h2>
+	
+{% if filename %}
+	<div style="display: inline-block">
+        <p>Original Image:</p>
+        <img src="{{ url_for('static', filename='images/' + filename) }}" style="width:400px">
+	</div>
+{% endif %}
+{% if restored_img_url  %}
+	<div style="display: inline-block">
+        <p>Restored Image:</p>
+        <a href="{{ restored_img_url }}" target="_blank"><img src="{{ restored_img_url }}" style="width:400px">
+        </a>
+	</div>
+{% endif %}
+
+<form method="post" action="/" enctype="multipart/form-data">
+	<p>
+		<input type="file" name="file" autocomplete="off" required>
+	</p>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+</form>
+    
+</body>
+</html>
